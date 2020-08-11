@@ -1,78 +1,32 @@
-.starter {
-  min-height: 100vh;
-
-  margin: auto;
-  @include flex(row, center, center);
-  background: $color-primary;
-  color: $color-white;
-  .logo {
-    background: $color-grey-light-3;
-    color: #000;
-    @include flex(column, center, center);
-    padding: 5rem;
-    border-radius: 1rem;
-    animation: tofro 4s ease-in-out infinite alternate;
-    h2 {
-      background: linear-gradient(
-        -45deg,
-        $color-primary 0% 50%,
-        $color-black 50% 100%
-      );
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-    img {
-      animation: rotate360 5s ease-in-out infinite;
+.large-hero {
+  position: relative;
+  min-height: 90vh;
+  img {
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.5);
+  }
+  &__text-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    *:not(:last-child) {
+      margin-bottom: 2rem;
     }
   }
-}
-
-@keyframes tofro {
-  0% {
-    transform: translateX(-10%);
+  &__title {
+    color: $color-primary;
   }
-  50% {
-    opacity: 1;
-    transform: translateX(10%);
+  &__subtitle {
+    color: $color-primary;
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0%) scale(1.5);
-  }
-}
-
-@keyframes rotate360 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
+  &__description {
+    color: $color-white;
+    font-size: 3rem;
+    font-weight: 300;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    max-width: 50rem;
   }
 }
-
-// {
-//   "name": "starter",
-//   "version": "1.0.0",
-//   "description": "",
-//   "main": "index.js",
-//   "scripts": {
-//     "watch:scss": "node-sass sass/main.scss css/styles.css -w",
-//     "devserver": "live-server",
-//     "devstart": "npm-run-all --parallel devserver watch:scss",
-//     "compile:sass": "node-sass sass/main.scss css/styles.comp.css",
-//     "prefix:css": "postcss --use autoprefixer -b \"last 5 versions\" css/styles.comp.css -o css/styles.prefix.css",
-//     "compress:css": "node-sass css/styles.prefix.css css/styles.css --output-style compressed",
-//     "build:css": "npm-run-all compile:sass prefix:css compress:css"
-//   },
-//   "author": "Khanx",
-//   "license": "ISC",
-//   "dependencies": {},
-//   "devDependencies": {
-//     "autoprefixer": "^9.8.5",
-//     "concat": "^1.0.3",
-//     "node-sass": "^4.14.1",
-//     "npm-run-all": "^4.1.5",
-//     "postcss-cli": "^7.1.1"
-//   }
-// }

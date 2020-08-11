@@ -4,9 +4,7 @@
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 6rem;
     display: inline-block;
-    border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
     font-size: 1.8rem;
@@ -30,11 +28,12 @@
 
   &::after {
     content: " ";
-    padding: 1.5rem 6rem;
     display: inline-block;
     border-radius: 10rem;
     position: absolute;
     font-size: 1.8rem;
+    border-radius: 1rem;
+
     height: 100%;
     width: 100%;
     top: 0;
@@ -45,17 +44,26 @@
 
   //   btn--primary
   &--primary {
-    background-color: $color-white;
-    color: $color-grey-dark;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    font-size: 2.5rem !important;
+    padding: 1.5rem 4rem;
+    border-radius: 0.5rem;
     &::after {
-      background-color: $color-white;
+      background-color: $color-primary-dark;
+      padding: 1.5rem 2rem;
     }
   }
   &--secondary {
     background-color: $color-primary;
-    color: $color-grey-light-1;
+    color: $color-white;
+    border-radius: 0.5rem;
+
+    padding: 1.2rem 1.5rem;
+
     &::after {
       background-color: $color-primary;
+      padding: 1.2rem 1.5rem;
     }
   }
 }

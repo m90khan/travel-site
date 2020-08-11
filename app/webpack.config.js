@@ -1,4 +1,5 @@
-const path = require("path"); // * to generate absolute path to the current flder
+const path = require("path");
+// * to generate absolute path to the current flder
 
 const postCSSPlugins = [require("autoprefixer")];
 
@@ -8,9 +9,17 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./dist/"),
   },
-  mode: "development",
-  watch: true,
 
+  devServer: {
+    before: function (app, server) {
+      server._watch("./**/*.html");
+    },
+    contentBase: path.resolve(__dirname, "./"),
+    hot: true,
+    port: 3000,
+    host: "0.0.0.0",
+  },
+  mode: "development",
   module: {
     rules: [
       {

@@ -1,0 +1,12 @@
+header {
+  @include flex(row, space-evenly, center);
+  nav {
+    ul {
+      @include flex(row, space-evenly, center);
+    }
+  }
+}
+
+body {
+  background: yellow !important;
+}

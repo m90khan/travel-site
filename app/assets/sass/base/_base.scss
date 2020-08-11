@@ -42,3 +42,7 @@ a {
   background-color: $color-primary;
   color: $color-white;
 }
+
+img {
+  object-fit: cover;
+}
